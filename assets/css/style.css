@@ -6,12 +6,12 @@
 
 body{
     font-family: sans-serif;
-    background-color: #083b4c;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     flex-wrap: wrap;
+    background-color: #7FFFD4;
 }
 
 form{
@@ -22,34 +22,24 @@ form{
 
 #container{
     display: flex;
-    justify-content:flex-start;
-    width:1198px;
-    gap: 22px;
+    justify-content: center;
+    width:800px;
     flex-wrap: wrap;
 }
 
-.noMultiple{
-    background-color: #1389b2;
+.sub-container{
+    display: flex;
+    justify-content: center;
+    flex-basis: 100%;
 }
 
-.multiple3{
-    background-color: #0cd6a1;
-}
-
-.multiple5{
-    background-color: #ffd166;
-}
-
-.multipleBoth{
-    background-color: #f0466f;
-}
 
 .cell{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border: 1px solid black;
-    
+
 }

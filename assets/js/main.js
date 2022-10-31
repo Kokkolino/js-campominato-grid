@@ -1,77 +1,53 @@
-let x;
+// variables
+let x = 1;
 let z;
-let zz;
-let check3;
-let check5;
+// getting the element into the js
 const container = document.getElementById('container');
 const btnStart = document.getElementById('start');
 const btnClear = document.getElementById('clear');
+// linking the functions
 btnStart.addEventListener('click', start);
 btnStart.addEventListener('click', disableButton);
 btnClear.addEventListener('click', clearBox);
 btnClear.addEventListener('click', enableButton);
 
 
+// function
 function start(){
-    z = parseInt(document.getElementById('inputFirstNumber').value);
-    zz = parseInt(document.getElementById('inputSecondNumber').value);
-if (z > 0 || zz > 0){
+    // input
+    squareNumber = parseInt(document.getElementById('inputNumber').value);
     
     
     
-    if (z>zz){
-        x=z;
-        z=zz;
-        zz=x;
-        alert("lo sapevo che avresti provato a trovare il pelo nell'uovo :D");
+    if (squareNumber < 0){
+        squareNumber = squareNumber * -1;
     }
     
-    if (z <= 0){
-        z=1;
-    }
-    
-    for (let i = z; i <= zz; ++i) {
+    for (k = 1; k <= squareNumber; ++k) {
+        // create row
         let div = document.createElement('div');
-        div.setAttribute('id', i );
-        div.setAttribute('class', 'cell');
-        check3 = i % 3;
-        check5 = i % 5;
-        if (check3 === 0 && check5 === 0) {
-            div.setAttribute('class', 'multipleBoth cell')
-            document.getElementById('container').appendChild(div);
-            document.getElementById(i).innerHTML = `<span>FizzBuzz</span>`;
+        div.setAttribute('class', 'sub-container');
+        div.setAttribute('id', `row${k}` );
+        document.getElementById('container').appendChild(div);
+
+        for (let i = 1; i <= squareNumber; ++i) {
+            // create element
+            let div = document.createElement('div');
+            div.setAttribute('id', x );
+            div.setAttribute('class', 'cell');
+            document.getElementById(`row${k}`).appendChild(div);
+            document.getElementById(x).innerHTML = `<span>${x}</span>`;
+            x++;
         }
-        else if (check3 === 0 && check5 != 0) {
-            div.setAttribute('class','multiple3 cell')
-            document.getElementById('container').appendChild(div);
-            document.getElementById(i).innerHTML = `<span>Fizz</span>`;
-        }
-        else if (check3 != 0 && check5 === 0) {
-            div.setAttribute('class','multiple5 cell')
-            document.getElementById('container').appendChild(div);
-            document.getElementById(i).innerHTML = `<span>Buzz</span>`;
-            
-        }
-        else{
-            div.setAttribute('class','noMultiple cell')
-            document.getElementById('container').appendChild(div);
-            document.getElementById(i).innerHTML = `<span>${i}</span>`;
-            
-        }
-        
     }
-    
-}
-else{
-    alert("compila i campi richiesti! ")
-}
+        
 }
 
+// clear buttons and other functionalities
 function clearBox(){
     document.getElementById('container').innerHTML = "";
-    document.getElementById("inputFirstNumber").value = "";
-    document.getElementById("inputSecondNumber").value = "";
-    
+    document.getElementById("inputNumber").value = "";
+    x = 1;
 }
 
 function disableButton() {
