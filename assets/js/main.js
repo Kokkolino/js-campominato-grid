@@ -18,11 +18,17 @@ function start(){
     squareNumber = parseInt(document.getElementById('inputNumber').value);
     
     
-    
+    // conditions
     if (squareNumber < 0){
         squareNumber = squareNumber * -1;
+        alert('i numeri negativi non sarebbero consentiti :P')
     }
     
+    if(squareNumber > 10){
+        squareNumber = 10;
+        alert('hai immesso un numero al di sopra del consentito, abbiamo impostato il numero a 10!');
+    }
+
     for (k = 1; k <= squareNumber; ++k) {
         // create row
         let div = document.createElement('div');
